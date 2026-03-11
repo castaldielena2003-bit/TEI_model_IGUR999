@@ -1,0 +1,197 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>IGUR II 999 – EpiDoc edition with TEI epistolary model</title>
+        <respStmt>
+          <resp>Epigraphic edition and transcription</resp>
+          <name>L. Moretti</name>
+        </respStmt>
+        <respStmt>
+          <resp>Encoding and epistolary text modeling</resp>
+          <name>Elena Castaldi</name>
+        </respStmt>
+      </titleStmt>
+
+     
+
+
+      <publicationStmt>
+        <p>Unpublished scholarly encoding (coursework / portfolio).</p>
+      </publicationStmt>
+
+      <sourceDesc>
+  <msDesc>
+    <msIdentifier>
+      <settlement>Roma</settlement>
+      <repository>Basilica di San Paolo fuori le mura</repository>
+    </msIdentifier>
+
+    <physDesc>
+      <objectDesc>
+        <supportDesc>
+          <support>Marble slab</support>
+          <extent>
+            <dimensions unit="cm">
+              <width>42</width>
+              <height>29</height>
+            </dimensions>
+          </extent>
+        </supportDesc>
+      </objectDesc>
+
+      <handDesc>
+        <handNote>
+          Greek inscription with lunate sigmas and slight apication; elongated phi and psi.
+        </handNote>
+      </handDesc>
+    </physDesc>
+
+    <history>
+      <origin>
+        <p>
+          The inscription was originally part of the necropolis along the Via Ostiense and
+          was later reused in the Basilica of San Paolo fuori le mura.
+        </p>
+      </origin>
+    </history>
+  </msDesc>
+
+  <bibl>
+    <author>L. Moretti</author>
+    <title>Inscriptiones Graecae Urbis Romae</title>
+    <biblScope unit="volume">II</biblScope>
+    <biblScope unit="item">999</biblScope>
+  </bibl>
+</sourceDesc>
+
+    </fileDesc>
+
+    <encodingDesc>
+      <p>
+        The file encodes the inscription using EpiDoc conventions for the epigraphic transcription
+        (layout, line breaks, restorations) and TEI-based text modeling to represent the internal
+        epistolary structure of the text. The epistolary structure is modeled as three parts:
+        (1) praescriptum (sender/addressee + greeting), (2) argumentum (main content),
+        (3) clausula (closing greetings).
+      </p>
+    </encodingDesc>
+
+   <!--description of the txt genre and function -->
+    <profileDesc>
+      <textClass>
+        <keywords scheme="genre">
+          <term>funerary inscription</term>
+          <term>private letter</term>
+          <term>legal document</term>
+        </keywords>
+      </textClass>
+    </profileDesc>
+  </teiHeader>
+
+  <text>
+    <body>
+
+    
+      <div type="edition" xml:id="ed">
+        <ab>
+
+          <!--PRAESCRIPTUM: names + greeting--> 
+
+          <seg xml:id="praescriptum" ana="#praescriptum #sender #addressee #greeting">
+            <lb n="1"/>
+            [Φαβία Αἰλία Φαβιανὴ Φαβίῳ Ὀνήτορι τῷ ἰδίῳ]
+            <lb n="2"/>
+            [χαίρειν]
+          </seg>
+
+          
+          <!--ARGUMENTUM: body of the letter--> 
+
+          <seg xml:id="argumentum" ana="#argumentum #legal-act">
+            <lb n="3"/>
+            Τόπον ὃν παρεκάλεσ<supplied reason="omitted">ας</supplied> ἐν τοῖς κήποις μου
+            <lb n="4"/>
+            ἵνα οἰκοδομήσῃς μνημαφῖον ἐκεῖ, συνκέ-
+            <lb n="5"/>
+            χωρηκέναι μέ σοι καὶ ἐπι̣τ̣ετροφέναι οἰκο-
+            <lb n="6"/>
+            δομῆσαί σε, ἵνα διὰ παντός σοι ἀνῆκεν τού-
+            <lb n="7"/>
+            τοις τοῖς <surplus>τοῖς</surplus> γράμμασί μου, οἷς ὑπέγραψα
+            <lb n="8"/>
+            τῇ πρὸ ιʹ καλανδῶν Αὐγούστων, 
+            <choice>
+             <abbr>ΚΛ</abbr>
+             <expan>Κλαυδίῳ</expan>
+            </choice>
+            Ἰουλια-
+            <lb n="9"/>
+            νῷ τὸ βʹ καὶ Βρυττίῳ Κρισπίνῳ ὑπάτοις,
+            <lb n="10"/>
+            δῆλόν σοι ποιῶ· οὗ μηδεμίαν ἀμφισβήτη-
+            <lb n="11"/>
+            σίν σέ ποτε ἕξειν ἐξ αὐτῶν τῶν γραμ-
+            <lb n="12"/>
+            μάτων μου δῆλόν ἐστιν, σοὶ δὲ διαφέρειν
+            <lb n="13"/>
+            τὸν τόπον τοῦ μέτρου τοῦ οἰκοδόμησας·
+          </seg>
+
+          <!-- 3) CLAUSULA: closing formulas -->
+          <seg xml:id="clausula" ana="#clausula #farewell">
+            <lb n="14"/>
+            <choice>
+             <sic>ЄPPⲰCEΔI</sic>
+             <corr>Ερρῶσθαί</corr>
+            </choice>
+            σε εὔχομε · ἔρρωσο
+          </seg>
+
+        </ab>
+      </div>
+
+      
+      
+      
+      <!--Explanation of TEI structure -->  
+     
+      <div type="analysis" subtype="epistolary-structure" xml:id="epistolary-model">
+        <head>Epistolary structure model</head>
+
+      
+        <div type="textpart" subtype="praescriptum" corresp="#praescriptum">
+          <desc>Sender + addressee + greeting formula.</desc>
+        </div>
+
+        <div type="textpart" subtype="argumentum" corresp="#argumentum">
+          <desc>Main content of the letter (argumentum), including, in this case, legal statements.</desc>
+        </div>
+
+        <div type="textpart" subtype="clausula" corresp="#clausula">
+          <desc>Closing greetings (clausula).</desc>
+        </div>
+      </div>
+
+      <!--Organization and interpretation of the TEI model -->  
+      
+      <!--Structure of the epistolary inscription-->
+      <interpGrp type="epistolary-part">
+        <interp xml:id="praescriptum">Praescriptum (names + greeting)</interp>
+        <interp xml:id="argumentum">Argumentum (body)</interp>
+        <interp xml:id="clausula">Clausula (closing greetings)</interp>
+      </interpGrp>
+
+
+      <!--Function of the structure's parts-->
+      <interpGrp type="discursive-function">
+        <interp xml:id="sender">Sender identification</interp>
+        <interp xml:id="addressee">Addressee identification</interp>
+        <interp xml:id="greeting">Opening greeting formula</interp>
+        <interp xml:id="legal-act">Legal/testamentary statement</interp>
+        <interp xml:id="farewell">Closing greeting formula</interp>
+      </interpGrp>
+
+    </body>
+  </text>
+</TEI>
